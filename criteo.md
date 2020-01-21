@@ -35,6 +35,19 @@ public class MyApplication extends Application {
     }
 }
 ```
+
+**  App 의 Application 에서의 선언이 어려운 경우 MainActivity 에서 아래와 같이 초기화 해주셔야 합니다.
+ ```java
+public class MainActivity extends Activity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        MobonSDK.init(this.getApplication());
+    }
+}
+```
+
    
 **  Progaurd 난독화 시 아래와 같이 예외 처리합니다.
  ```java
